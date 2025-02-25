@@ -1,0 +1,622 @@
+.page {
+  --mouse-x: 0;
+  --mouse-y: 0;
+  background-color: #0e0e12;
+  min-height: calc(100vh - 160px);
+  padding: 2rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  transform: translate(
+    calc(var(--mouse-x) * -10px),
+    calc(var(--mouse-y) * -10px)
+  );
+  transition: transform 0.2s ease-out;
+}
+
+.header {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.headerTitle h1 {
+  font-family: var(--font-montserrat);
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  animation: fadeIn 1s ease-out;
+}
+
+.headerDescription {
+  font-family: var(--font-montserrat);
+  font-size: 1.2rem;
+  color: #aaa;
+  max-width: 600px;
+  margin: 0 auto;
+  animation: fadeIn 1s ease-out 0.5s both;
+}
+
+.heroSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 6rem;
+  position: relative;
+}
+
+.dynamicLetters {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+  height: 200px;
+  perspective: 800px;
+}
+
+.dynamicLetters > div {
+  font-family: var(--font-montserrat);
+  font-size: 8rem;
+  font-weight: 800;
+  margin: 0 -0.1em;
+  position: relative;
+  display: inline-block;
+}
+
+.letterM {
+  color: var(--accent-green);
+  animation: letterMAnimation 6s infinite;
+}
+
+.letterO {
+  color: white;
+  animation: letterOAnimation 6s infinite;
+}
+
+.letterT {
+  color: var(--accent-purple);
+  animation: letterTAnimation 6s infinite;
+}
+
+.letterI {
+  color: white;
+  animation: letterIAnimation 6s infinite;
+}
+
+.letterO2 {
+  color: var(--accent-orange);
+  animation: letterO2Animation 6s infinite;
+}
+
+.letterN {
+  color: white;
+  animation: letterNAnimation 6s infinite;
+}
+
+@keyframes letterMAnimation {
+  0%,
+  100% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+}
+
+@keyframes letterOAnimation {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+}
+
+@keyframes letterTAnimation {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+@keyframes letterIAnimation {
+  0%,
+  100% {
+    transform: skewX(0);
+  }
+  50% {
+    transform: skewX(30deg);
+  }
+}
+
+@keyframes letterO2Animation {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+}
+
+@keyframes letterNAnimation {
+  0%,
+  100% {
+    transform: rotateZ(0);
+  }
+  50% {
+    transform: rotateZ(10deg);
+  }
+}
+
+.scrollText {
+  width: 100%;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 1rem 0;
+}
+
+.scrollingLine {
+  font-family: var(--font-montserrat);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+  white-space: nowrap;
+  animation: scrollText 20s linear infinite;
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.infoSection {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  margin-bottom: 6rem;
+  align-items: center;
+}
+
+.infoContainer {
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  animation: slideInLeft 1s ease-out;
+}
+
+.infoTitle {
+  font-family: var(--font-montserrat);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent-green);
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.infoTitle::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  width: 50px;
+  height: 5px;
+  background-color: var(--accent-green);
+  transition: width 0.5s ease;
+}
+
+.infoContainer:hover .infoTitle::after {
+  width: 100px;
+}
+
+.infoParagraph {
+  color: #ddd;
+}
+
+.infoParagraph p {
+  font-family: var(--font-montserrat);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.rotatingBlock {
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  animation: slideInRight 1s ease-out;
+}
+
+.rotatingElement {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  transform-style: preserve-3d;
+  animation: rotate 15s linear infinite;
+}
+
+.face {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-montserrat);
+  font-size: 2rem;
+  font-weight: 800;
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.face:nth-child(1) {
+  transform: translateZ(100px);
+}
+.face:nth-child(2) {
+  transform: rotateY(90deg) translateZ(100px);
+}
+.face:nth-child(3) {
+  transform: rotateY(180deg) translateZ(100px);
+}
+.face:nth-child(4) {
+  transform: rotateY(-90deg) translateZ(100px);
+}
+.face:nth-child(5) {
+  transform: rotateX(90deg) translateZ(100px);
+}
+.face:nth-child(6) {
+  transform: rotateX(-90deg) translateZ(100px);
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateY(0) rotateX(0);
+  }
+  100% {
+    transform: rotateY(360deg) rotateX(360deg);
+  }
+}
+
+.wavyTextContainer {
+  margin: 6rem 0;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.waveText {
+  font-family: var(--font-montserrat);
+  font-size: 3rem;
+  font-weight: 900;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.waveText span {
+  display: inline-block;
+  animation: textWave 2s ease-in-out infinite;
+}
+
+.techniquesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 6rem;
+}
+
+.techniqueCard {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  padding: 2rem;
+  display: flex;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.techniqueCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.techniqueNumber {
+  font-family: var(--font-montserrat);
+  font-size: 3rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.1);
+  margin-right: 1.5rem;
+}
+
+.techniqueContent {
+  flex: 1;
+}
+
+.techniqueContent h3 {
+  font-family: var(--font-montserrat);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.techniqueContent p {
+  font-family: var(--font-montserrat);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #aaa;
+}
+
+.expandingLine {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-purple), var(--accent-green));
+  transition: width 0.5s ease;
+}
+
+.techniqueCard:hover .expandingLine {
+  width: 100%;
+}
+
+.verticalTextSection {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 6rem;
+}
+
+.verticalContainer {
+  display: flex;
+  gap: 2rem;
+}
+
+.verticalColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.verticalColumn span {
+  font-family: var(--font-montserrat);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: white;
+  line-height: 1.2;
+  opacity: 0.2;
+  transition: opacity 0.3s ease, transform 0.3s ease, color 0.3s ease;
+}
+
+.verticalColumn:hover span {
+  opacity: 1;
+  transform: scale(1.2);
+  color: var(--accent-green);
+}
+
+.typingContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 6rem;
+  height: 100px;
+}
+
+.typingText {
+  font-family: var(--font-mono);
+  font-size: 2rem;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 4s steps(40) 1s infinite both;
+}
+
+.typingText::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -10px;
+  width: 10px;
+  height: 100%;
+  background-color: white;
+  animation: blink 1s step-end infinite;
+}
+
+.emphasized {
+  color: var(--accent-green);
+  font-weight: bold;
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  55% {
+    width: 100%;
+  }
+  65% {
+    width: 0;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  from,
+  to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.footer {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  position: relative;
+}
+
+.animatedLine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--accent-green),
+    var(--accent-purple),
+    var(--accent-green)
+  );
+  background-size: 200% 100%;
+  width: 100%;
+  animation: gradientMove 2s linear infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.backLink {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.linkButton {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.linkButton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-green), var(--accent-purple));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.linkButton:hover::before {
+  opacity: 1;
+}
+
+.linkText {
+  font-family: var(--font-montserrat);
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  margin-right: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.linkArrow {
+  font-size: 1.5rem;
+  color: white;
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.linkButton:hover .linkArrow {
+  transform: translateX(10px);
+}
+
+@media (max-width: 992px) {
+  .infoSection {
+    grid-template-columns: 1fr;
+  }
+
+  .headerTitle h1 {
+    font-size: 2.5rem;
+  }
+
+  .dynamicLetters > div {
+    font-size: 5rem;
+  }
+
+  .techniquesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .verticalContainer {
+    gap: 1rem;
+  }
+
+  .typingText {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .dynamicLetters > div {
+    font-size: 3.5rem;
+  }
+
+  .infoTitle {
+    font-size: 1.5rem;
+  }
+
+  .techniqueCard {
+    flex-direction: column;
+  }
+
+  .techniqueNumber {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .verticalContainer {
+    gap: 0.5rem;
+  }
+
+  .verticalColumn span {
+    font-size: 1.8rem;
+  }
+
+  .waveText {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,230 @@
+/* Global CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Custom font imports */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=Montserrat:wght@400;500;700;800;900&family=Oswald:wght@400;500;700&family=Roboto+Condensed:wght@400;700&family=Space+Mono&family=Abril+Fatface&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Press+Start+2P&family=VT323&family=Bungee&family=Six+Caps&family=Monoton&family=Righteous&family=DM+Serif+Display:ital@0;1&display=swap");
+
+:root {
+  /* Base colors */
+  --primary-dark: #0f0f0f;
+  --primary-black: #000;
+  --primary-light: #f8f8f8;
+  --primary-white: #fff;
+
+  /* Accent colors */
+  --accent-red: #ff3c00;
+  --accent-yellow: #ffff00;
+  --accent-cyan: #00ffff;
+  --accent-magenta: #ff00ff;
+  --accent-green: #0f0;
+  --accent-pink: #ff0066;
+  --accent-purple: #7b00ff;
+  --accent-orange: #ff9500;
+  --accent-blue: #0066ff;
+
+  /* New gradient colors */
+  --gradient-vapor: linear-gradient(
+    135deg,
+    #ff6ad5 0%,
+    #c774e8 50%,
+    #73bbff 100%
+  );
+  --gradient-lava: linear-gradient(135deg, #ff3c00 0%, #ff9500 100%);
+  --gradient-toxic: linear-gradient(135deg, #00ff6a 0%, #00ffcc 100%);
+  --gradient-cyber: linear-gradient(90deg, #0066ff 0%, #00ffff 100%);
+  --gradient-midnight: linear-gradient(135deg, #12005e 0%, #6200ea 100%);
+
+  /* Font families */
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  --font-mono: "Space Mono", "Courier New", monospace;
+  --font-inter: "Inter", sans-serif;
+  --font-oswald: "Oswald", sans-serif;
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-roboto: "Roboto Condensed", sans-serif;
+  --font-helvetica: "Helvetica Neue", "Arial", sans-serif;
+  --font-abril: "Abril Fatface", cursive;
+  --font-playfair: "Playfair Display", serif;
+  --font-pixel: "Press Start 2P", cursive;
+  --font-terminal: "VT323", monospace;
+  --font-bungee: "Bungee", cursive;
+  --font-sixcaps: "Six Caps", sans-serif;
+  --font-monoton: "Monoton", cursive;
+  --font-righteous: "Righteous", cursive;
+  --font-serif: "DM Serif Display", serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--primary-dark);
+  color: var(--primary-light);
+  min-height: 100vh;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Animation keyframes for reuse across components */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes glitchText {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-3px, 3px);
+  }
+  40% {
+    transform: translate(-3px, -3px);
+  }
+  60% {
+    transform: translate(3px, 3px);
+  }
+  80% {
+    transform: translate(3px, -3px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes flicker {
+  0%,
+  19.999%,
+  22%,
+  62.999%,
+  64%,
+  64.999%,
+  70%,
+  100% {
+    opacity: 1;
+  }
+  20%,
+  21.999%,
+  63%,
+  63.999%,
+  65%,
+  69.999% {
+    opacity: 0.33;
+  }
+}
+
+@keyframes textWave {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-15px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes liquidMorph {
+  0% {
+    border-radius: 40% 60% 60% 40% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  100% {
+    border-radius: 40% 60% 60% 40% / 60% 30% 70% 40%;
+  }
+}
+
+@keyframes dataScroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}

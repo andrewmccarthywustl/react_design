@@ -1,0 +1,53 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.header {
+  background-color: var(--primary-black);
+  padding: 1.5rem 0;
+  border-bottom: 2px solid #333;
+}
+
+.logoLink {
+  display: block;
+}
+
+.logo {
+  font-family: var(--font-inter);
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  color: var(--primary-white);
+}
+
+.logo span {
+  font-weight: 400;
+  opacity: 0.7;
+  margin-left: 0.5rem;
+}
+
+.main {
+  flex: 1;
+}
+
+.footer {
+  background-color: var(--primary-black);
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.copyright {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: #666;
+}

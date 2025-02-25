@@ -1,0 +1,113 @@
+.page {
+  background-color: var(--primary-dark);
+  min-height: calc(100vh - 160px);
+  padding: 4rem 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.header {
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.headerTitle {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--primary-white);
+}
+
+.headerDescription {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: #666;
+  font-family: var(--font-mono);
+}
+
+.content {
+  background-color: var(--primary-black);
+  border: 4px solid var(--primary-white);
+  outline: 1px solid var(--primary-black);
+  padding: 3rem;
+  margin-bottom: 3rem;
+}
+
+.headline {
+  font-family: var(--font-inter);
+  font-size: 4.5rem;
+  font-weight: 900;
+  line-height: 0.9;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  word-spacing: -0.2em;
+  letter-spacing: -0.03em;
+  color: var(--primary-white);
+}
+
+.textStroke {
+  -webkit-text-stroke: 2px var(--primary-white);
+  color: transparent;
+}
+
+.contentBox {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.subhead {
+  font-family: var(--font-inter);
+  font-size: 1.5rem;
+  line-height: 1.3;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-left: 5px solid var(--accent-red);
+  padding-left: 1rem;
+  color: var(--accent-red);
+}
+
+.bodyText {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #aaa;
+}
+
+.backLink {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.linkButton {
+  background-color: var(--primary-black);
+  color: var(--primary-white);
+  border: 2px solid var(--primary-white);
+  padding: 1rem 2rem;
+  font-family: var(--font-inter);
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.linkButton:hover {
+  background-color: var(--primary-white);
+  color: var(--primary-black);
+}
+
+@media (max-width: 768px) {
+  .headline {
+    font-size: 3rem;
+  }
+}

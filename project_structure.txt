@@ -1,0 +1,36 @@
+brutalist-typography-project/
+├── src/
+│   ├── main.tsx                      # Entry point
+│   ├── App.tsx                       # Main application
+│   ├── index.css                     # Global styles
+│   ├── assets/                       # Static assets
+│   ├── components/
+│   │   ├── HomePage/                 # Home page component
+│   │   │   ├── HomePage.tsx
+│   │   │   └── HomePage.module.css
+│   │   ├── NavigationButton/         # Reusable button component
+│   │   │   ├── NavigationButton.tsx
+│   │   │   └── NavigationButton.module.css
+│   │   └── Layout/                   # Shared layout component
+│   │       ├── Layout.tsx
+│   │       └── Layout.module.css
+│   └── pages/                        # Typography style pages
+│       ├── NeoBrutalist/
+│       │   ├── NeoBrutalist.tsx
+│       │   └── NeoBrutalist.module.css
+│       ├── IndustrialGrunge/
+│       │   ├── IndustrialGrunge.tsx
+│       │   └── IndustrialGrunge.module.css
+│       ├── DigitalDistortion/
+│       │   ├── DigitalDistortion.tsx
+│       │   └── DigitalDistortion.module.css
+│       ├── ConcreteModernism/
+│       │   ├── ConcreteModernism.tsx
+│       │   └── ConcreteModernism.module.css
+│       ├── PunkRevival/
+│       │   ├── PunkRevival.tsx
+│       │   └── PunkRevival.module.css
+│       └── TechConstructivism/
+│           ├── TechConstructivism.tsx
+│           └── TechConstructivism.module.css
+└── index.html                        # HTML entry
