@@ -3,7 +3,7 @@ import { useEffect, useState, useRef } from "react";
 import styles from "./TypeChaos.module.css";
 
 const TypeChaos = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [_, setMousePosition] = useState({ x: 0, y: 0 });
   const letterContainerRef = useRef<HTMLDivElement>(null);
   const chaosLettersRef = useRef<HTMLDivElement>(null);
 
