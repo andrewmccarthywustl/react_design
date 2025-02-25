@@ -1,9 +1,9 @@
 {
-  "name": "experimental-typography",
+  "name": "brutalist-typography",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://andrewmccarthywustl.github.io/react_design/",
   "type": "module",
+  "homepage": "https://andrewmccarthywustl.github.io/react_design",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
