@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
 import HomePage from "./components/HomePage/HomePage";
 import NeoBrutalist from "./pages/NeoBrutalist/NeoBrutalist";
@@ -17,21 +17,23 @@ import TypeChaos from "./pages/TypeChaos/TypeChaos";
 function App() {
   return (
     <Layout>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/neo-brutalist" element={<NeoBrutalist />} />
-        <Route path="/industrial-grunge" element={<IndustrialGrunge />} />
-        <Route path="/digital-distortion" element={<DigitalDistortion />} />
-        <Route path="/concrete-modernism" element={<ConcreteModernism />} />
-        <Route path="/punk-revival" element={<PunkRevival />} />
-        <Route path="/tech-constructivism" element={<TechConstructivism />} />
-        <Route path="/vapor-dimension" element={<VaporDimension />} />
-        <Route path="/data-maximalism" element={<DataMaximalism />} />
-        <Route path="/analog-glitch" element={<AnalogGlitch />} />
-        <Route path="/kinetic-typography" element={<KineticTypography />} />
-        <Route path="/liquid-brutalism" element={<LiquidBrutalism />} />
-        <Route path="/type-chaos" element={<TypeChaos />} />
-      </Routes>
+      <HashRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/neo-brutalist" element={<NeoBrutalist />} />
+          <Route path="/industrial-grunge" element={<IndustrialGrunge />} />
+          <Route path="/digital-distortion" element={<DigitalDistortion />} />
+          <Route path="/concrete-modernism" element={<ConcreteModernism />} />
+          <Route path="/punk-revival" element={<PunkRevival />} />
+          <Route path="/tech-constructivism" element={<TechConstructivism />} />
+          <Route path="/vapor-dimension" element={<VaporDimension />} />
+          <Route path="/data-maximalism" element={<DataMaximalism />} />
+          <Route path="/analog-glitch" element={<AnalogGlitch />} />
+          <Route path="/kinetic-typography" element={<KineticTypography />} />
+          <Route path="/liquid-brutalism" element={<LiquidBrutalism />} />
+          <Route path="/type-chaos" element={<TypeChaos />} />
+        </Routes>
+      </HashRouter>
     </Layout>
   );
 }
