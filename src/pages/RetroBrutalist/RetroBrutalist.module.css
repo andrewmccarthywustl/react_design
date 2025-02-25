@@ -1,0 +1,675 @@
+.page {
+  background-color: #e6e6e6;
+  min-height: calc(100vh - 160px);
+  color: #000;
+  font-family: var(--font-mono);
+  position: relative;
+  overflow: hidden;
+}
+
+.cursorFollower {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: 2px solid var(--accent-cyan);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 999;
+  mix-blend-mode: difference;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  min-height: calc(100vh - 160px);
+}
+
+/* Sidebar Styles */
+.sidebar {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  border-right: 2px solid var(--accent-cyan);
+  height: 100%;
+}
+
+.menuHeader {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-bottom: 2px solid #333;
+}
+
+.dotPattern {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent-cyan);
+  border-radius: 0;
+}
+
+.menuTitle {
+  font-size: 1.5rem;
+  font-family: var(--font-mono);
+  font-weight: bold;
+  letter-spacing: 0.1em;
+}
+
+.menu {
+  list-style-type: none;
+  padding: 0;
+  flex-grow: 1;
+}
+
+.menuItem {
+  padding: 1.2rem 1.5rem;
+  border-bottom: 1px solid #333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.menuItem:hover {
+  background-color: #111;
+  color: var(--accent-cyan);
+}
+
+.menuItem.active {
+  background-color: var(--accent-cyan);
+  color: #000;
+}
+
+.menuNumber {
+  width: 30px;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.menuText {
+  letter-spacing: 0.05em;
+}
+
+.sidebarFooter {
+  padding: 1.5rem;
+  border-top: 2px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pixelBox {
+  width: 30px;
+  height: 30px;
+  background-color: var(--accent-cyan);
+  position: relative;
+}
+
+.pixelBox::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 10px;
+  height: 10px;
+  background-color: black;
+}
+
+.retro {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+/* Content Styles */
+.content {
+  padding: 2rem;
+  position: relative;
+  background-color: #e6e6e6;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.header {
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.title {
+  font-family: var(--font-inter);
+  font-size: 5rem;
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.title::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background-color: var(--accent-cyan);
+  bottom: -5px;
+  left: 0;
+}
+
+.tagline {
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  color: #666;
+}
+
+.mainContent {
+  flex-grow: 1;
+  position: relative;
+}
+
+/* Manifesto Section */
+.manifestoSection {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.manifestoHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.horizontalLine {
+  flex-grow: 1;
+  height: 2px;
+  background-color: #000;
+}
+
+.sectionTitle {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0 1rem;
+  letter-spacing: 0.05em;
+}
+
+.textColumns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.paragraph {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.pixelArt {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.pixelGrid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 2px;
+  width: 300px;
+  height: 300px;
+}
+
+.pixel {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ccc;
+}
+
+/* Elements Section */
+.elementsSection {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.elementsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.elementBlock {
+  border: 2px solid #000;
+  padding: 1.5rem;
+  background-color: #fff;
+}
+
+.elementTitle {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #000;
+  padding-bottom: 0.5rem;
+}
+
+.elementContent {
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.typeSample {
+  font-family: var(--font-mono);
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.typeDesc {
+  font-size: 0.8rem;
+  text-align: center;
+  letter-spacing: 0.1em;
+  color: #666;
+}
+
+.colorGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.colorBox {
+  width: 80px;
+  height: 80px;
+  border: 1px solid #000;
+}
+
+.colorPrimary {
+  background-color: #000;
+}
+
+.colorSecondary {
+  background-color: #e6e6e6;
+}
+
+.colorAccent {
+  background-color: var(--accent-cyan);
+}
+
+.colorBlack {
+  background-color: #333;
+}
+
+.layoutSample {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+}
+
+.layoutBox {
+  background-color: #000;
+}
+
+.layoutLine {
+  grid-column: span 2;
+  height: 5px;
+  background-color: var(--accent-cyan);
+  align-self: center;
+}
+
+.shapesContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.shape1 {
+  width: 50px;
+  height: 50px;
+  background-color: #000;
+}
+
+.shape2 {
+  width: 50px;
+  height: 50px;
+  background-color: var(--accent-cyan);
+  border-radius: 50%;
+}
+
+.shape3 {
+  width: 50px;
+  height: 50px;
+  background-color: #000;
+  transform: rotate(45deg);
+}
+
+/* Design Section */
+.designSection {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.designGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.designCard {
+  background-color: #fff;
+  border: 2px solid #000;
+  padding: 1.5rem;
+}
+
+.designCardHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.designIcon {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  color: var(--accent-cyan);
+}
+
+.designCardTitle {
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+}
+
+.designCardText {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.designQuote {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.quote {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  position: relative;
+  padding: 0 2rem;
+}
+
+.quote::before,
+.quote::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background-color: var(--accent-cyan);
+}
+
+.quote::before {
+  top: 50%;
+  left: 0;
+}
+
+.quote::after {
+  top: 50%;
+  right: 0;
+}
+
+.quoteAuthor {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Futures Section */
+.futuresSection {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.terminalWindow {
+  margin-top: 2rem;
+  border: 2px solid #000;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.terminalHeader {
+  background-color: #333;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.terminalControls {
+  display: flex;
+  gap: 0.5rem;
+  margin-right: 1rem;
+}
+
+.terminalControl {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #666;
+}
+
+.terminalTitle {
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.terminalContent {
+  padding: 1.5rem;
+  font-family: var(--font-mono);
+  color: #0f0;
+  height: 400px;
+  overflow-y: auto;
+}
+
+.terminalLine {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.prompt {
+  color: var(--accent-cyan);
+  margin-right: 0.5rem;
+}
+
+.terminalCursor {
+  display: inline-block;
+  width: 0.5em;
+  height: 1em;
+  background-color: var(--accent-cyan);
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Contacts Section */
+.contactsSection {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.contactCard {
+  margin-top: 2rem;
+  background-color: #fff;
+  border: 2px solid #000;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.cardPattern {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120px;
+  height: 120px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  padding: 10px;
+}
+
+.patternSquare {
+  background-color: var(--accent-cyan);
+  width: 100%;
+  height: 100%;
+}
+
+.patternSquare:nth-child(odd) {
+  opacity: 0.5;
+}
+
+.contactInfo {
+  padding-right: 120px;
+}
+
+.contactRow {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.contactLabel {
+  width: 120px;
+  font-weight: bold;
+  color: #666;
+}
+
+.contactValue {
+  font-family: var(--font-mono);
+}
+
+.blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Footer */
+.footer {
+  margin-top: 3rem;
+  border-top: 2px solid #000;
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footerText {
+  font-size: 0.8rem;
+  color: #666;
+  display: flex;
+  align-items: center;
+}
+
+.footerDivider {
+  margin: 0 0.5rem;
+}
+
+.backButton {
+  background-color: #000;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.backButton:hover {
+  background-color: var(--accent-cyan);
+  color: #000;
+}
+
+.backArrow {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+  .grid {
+    grid-template-columns: 250px 1fr;
+  }
+
+  .title {
+    font-size: 4rem;
+  }
+
+  .textColumns {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .elementsGrid,
+  .designGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .pixelGrid {
+    width: 240px;
+    height: 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .content {
+    padding: 1.5rem;
+  }
+
+  .title {
+    font-size: 3.5rem;
+  }
+
+  .textColumns {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+}

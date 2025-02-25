@@ -99,6 +99,48 @@ const HomePage = () => {
               colorScheme="default"
             />
           </div>
+          <div className={styles.gridItem}>
+            <NavigationButton
+              to="/minimalist-design"
+              label="Minimalist Design"
+              colorScheme="default"
+            />
+          </div>
+          <div className={styles.gridItem}>
+            <NavigationButton
+              to="/retro-brutalist"
+              label="Retro Brutalist"
+              colorScheme="cyan"
+            />
+          </div>
+          <div className={styles.gridItem}>
+            <NavigationButton
+              to="/liquid-motion"
+              label="Liquid Motion"
+              colorScheme="cyan"
+            />
+          </div>
+          <div className={styles.gridItem}>
+            <NavigationButton
+              to="/curved-lines"
+              label="Curved Lines"
+              colorScheme="cyan"
+            />
+          </div>
+          <div className={styles.gridItem}>
+            <NavigationButton
+              to="/skeletal-performance"
+              label="Skeletal Performance"
+              colorScheme="cyan"
+            />
+          </div>
+          <div className={styles.gridItem}>
+            <NavigationButton
+              to="/geometric-structure"
+              label="Geometric Structure"
+              colorScheme="cyan"
+            />
+          </div>
         </div>
       </div>
     </div>

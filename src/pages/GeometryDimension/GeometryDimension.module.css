@@ -1,0 +1,745 @@
+.page {
+  position: relative;
+  min-height: calc(100vh - 160px);
+  perspective: 1000px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #111 0%, #222 100%);
+  color: white;
+}
+
+/* 3D Scene */
+.scene {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  perspective: 1500px;
+  transform-style: preserve-3d;
+  z-index: 0;
+}
+
+/* Common shape styles */
+.shape {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+  animation: float 8s ease-in-out infinite;
+}
+
+/* Cube */
+.cube {
+  width: 100px;
+  height: 100px;
+  transform: translate(-50%, -50%) translateZ(100px);
+  transform-style: preserve-3d;
+}
+
+.face {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background-color: rgba(73, 127, 237, 0.4);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 0 15px rgba(73, 127, 237, 0.8);
+  transform-style: preserve-3d;
+}
+
+.front {
+  transform: translateZ(50px);
+}
+
+.back {
+  transform: translateZ(-50px) rotateY(180deg);
+}
+
+.right {
+  transform: translateX(50px) rotateY(90deg);
+}
+
+.left {
+  transform: translateX(-50px) rotateY(-90deg);
+}
+
+.top {
+  transform: translateY(-50px) rotateX(90deg);
+}
+
+.bottom {
+  transform: translateY(50px) rotateX(-90deg);
+}
+
+/* Pyramid */
+.pyramid {
+  transform-style: preserve-3d;
+  transform: translate(-50%, -50%) translateX(-150px) translateZ(100px);
+}
+
+.pyramidFace {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 100px solid rgba(255, 102, 102, 0.4);
+  transform-origin: 50% 100%;
+  transform-style: preserve-3d;
+  box-shadow: 0 0 15px rgba(255, 102, 102, 0.8);
+}
+
+.pyramidFront {
+  transform: translateZ(-20px) translateY(-50px) rotateX(-30deg);
+}
+
+.pyramidRight {
+  transform: translateX(20px) translateY(-50px) rotateY(90deg) rotateX(-30deg);
+}
+
+.pyramidLeft {
+  transform: translateX(-20px) translateY(-50px) rotateY(-90deg) rotateX(-30deg);
+}
+
+.pyramidBottom {
+  width: 100px;
+  height: 100px;
+  border: none;
+  background-color: rgba(255, 102, 102, 0.4);
+  transform: translateY(0) rotateX(90deg);
+}
+
+/* Sphere */
+.sphere {
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(252, 186, 3, 0.8),
+    rgba(252, 186, 3, 0.2)
+  );
+  border-radius: 50%;
+  transform: translate(-50%, -50%) translateX(150px) translateZ(80px);
+  box-shadow: 0 0 30px rgba(252, 186, 3, 0.6),
+    inset 0 0 30px rgba(252, 186, 3, 0.4);
+}
+
+/* Torus */
+.torus {
+  width: 100px;
+  height: 100px;
+  background: conic-gradient(
+    from 0deg,
+    rgba(128, 0, 255, 0) 0%,
+    rgba(128, 0, 255, 0.8) 25%,
+    rgba(128, 0, 255, 0) 50%,
+    rgba(128, 0, 255, 0.8) 75%,
+    rgba(128, 0, 255, 0) 100%
+  );
+  border-radius: 50%;
+  transform: translate(-50%, -50%) translateY(150px) translateZ(120px)
+    rotateX(90deg);
+  box-shadow: 0 0 30px rgba(128, 0, 255, 0.6);
+  filter: blur(1px);
+}
+
+.torus::before {
+  content: "";
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  background-color: #111;
+  border-radius: 50%;
+}
+
+/* Cylinder */
+.cylinder {
+  transform-style: preserve-3d;
+  transform: translate(-50%, -50%) translateY(-150px) translateZ(80px);
+}
+
+.cylinderFace {
+  position: absolute;
+}
+
+.cylinderTop,
+.cylinderBottom {
+  width: 80px;
+  height: 80px;
+  background-color: rgba(0, 204, 153, 0.4);
+  border-radius: 50%;
+  transform-style: preserve-3d;
+  box-shadow: 0 0 15px rgba(0, 204, 153, 0.8);
+}
+
+.cylinderTop {
+  transform: translateZ(40px);
+}
+
+.cylinderBottom {
+  transform: translateZ(-40px);
+}
+
+.cylinderSide {
+  width: 251px; /* 2πr */
+  height: 80px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 204, 153, 0.6),
+    rgba(0, 204, 153, 0.2)
+  );
+  transform-origin: left center;
+  transform: rotateY(90deg) translateX(-40px) translateZ(-125.5px);
+  border-radius: 5px;
+}
+
+/* Floating Letters */
+.floatingLetters {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform-style: preserve-3d;
+}
+
+.letter {
+  position: absolute;
+  font-family: var(--font-inter);
+  font-size: 80px;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  transform-style: preserve-3d;
+  animation: letterFloat 4s ease-in-out infinite;
+  user-select: none;
+}
+
+@keyframes letterFloat {
+  0%,
+  100% {
+    transform: translateY(0) translateZ(0);
+  }
+  50% {
+    transform: translateY(-20px) translateZ(20px);
+  }
+}
+
+/* Grid */
+.grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.gridLine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2000px;
+  height: 2000px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 49.5%,
+    rgba(73, 127, 237, 0.3) 50%,
+    transparent 50.5%,
+    transparent 100%
+  );
+  background-size: 100px 100px;
+  transform-origin: center center;
+  transform-style: preserve-3d;
+}
+
+/* Content */
+.content {
+  position: relative;
+  padding: 100px 2rem;
+  z-index: 1;
+  min-height: calc(100vh - 160px);
+  display: flex;
+  flex-direction: column;
+  gap: 150px;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  margin-bottom: 50px;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font-inter);
+  font-weight: 900;
+  line-height: 0.9;
+  text-transform: uppercase;
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease-out;
+}
+
+.titleLine {
+  display: block;
+  font-size: 8rem;
+  letter-spacing: -0.05em;
+  background: linear-gradient(180deg, #fff 0%, #777 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transform-style: preserve-3d;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5),
+    5px 5px 0 rgba(73, 127, 237, 0.8);
+}
+
+@media (max-width: 768px) {
+  .titleLine {
+    font-size: 4rem;
+  }
+}
+
+/* Section */
+.section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+  perspective: 1000px;
+}
+
+.sectionContent {
+  width: 100%;
+  max-width: 500px;
+  transform-style: preserve-3d;
+}
+
+.sectionTitle {
+  font-family: var(--font-inter);
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  position: relative;
+}
+
+.sectionTitle::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background-color: var(--accent-cyan);
+}
+
+.sectionText {
+  font-family: var(--font-montserrat);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #aaa;
+}
+
+/* 3D Cards */
+.dimensionCards {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.dimensionCard {
+  width: 150px;
+  height: 200px;
+  position: relative;
+  perspective: 800px;
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+}
+
+.cardFront,
+.cardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border-radius: 10px;
+  background: rgba(20, 20, 20, 0.8);
+  border: 2px solid rgba(73, 127, 237, 0.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.6s ease;
+}
+
+.cardBack {
+  transform: rotateY(180deg);
+  text-align: center;
+}
+
+.dimensionCard:hover .cardFront {
+  transform: rotateY(180deg);
+}
+
+.dimensionCard:hover .cardBack {
+  transform: rotateY(360deg);
+}
+
+.cardTitle {
+  font-family: var(--font-inter);
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cardIcon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.perspectiveIcon,
+.extrusionIcon,
+.rotationIcon {
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent-cyan);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
+.perspectiveIcon {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3 3h18v18H3V3m2 2v14h14V5H5'/%3E%3C/svg%3E");
+}
+
+.extrusionIcon {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M8 2h8v2h-8V2zm10 6V4h-2v4H8V4H6v4H2v14h20V8h-4zM4 20V10h16v10H4z'/%3E%3C/svg%3E");
+}
+
+.rotationIcon {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 8a4 4 0 1 0 4 4 4 4 0 0 0-4-4zm0 6a2 2 0 1 1 2-2 2 2 0 0 1-2 2zm-1-9h2v2h-2zm0 10h2v6h-2zM4.5 10h2v4h-2zm13 0h2v4h-2z'/%3E%3C/svg%3E");
+  animation: spin 5s linear infinite;
+}
+
+/* Rotating Cube */
+.rotatingContainer {
+  width: 200px;
+  height: 200px;
+  perspective: 1000px;
+  margin-right: 3rem;
+}
+
+.rotatingCube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotateCube 20s linear infinite;
+}
+
+.cubeFace {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-inter);
+  font-size: 2rem;
+  font-weight: 900;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(73, 127, 237, 0.2);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 20px rgba(73, 127, 237, 0.5);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  transform-style: preserve-3d;
+}
+
+.cubeFaceFront {
+  transform: translateZ(100px);
+}
+
+.cubeFaceBack {
+  transform: rotateY(180deg) translateZ(100px);
+}
+
+.cubeFaceRight {
+  transform: rotateY(90deg) translateZ(100px);
+}
+
+.cubeFaceLeft {
+  transform: rotateY(-90deg) translateZ(100px);
+}
+
+.cubeFaceTop {
+  transform: rotateX(90deg) translateZ(100px);
+}
+
+.cubeFaceBottom {
+  transform: rotateX(-90deg) translateZ(100px);
+}
+
+.rotatingText {
+  transform: translateZ(10px);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Kinetic Text */
+.kineticTextContainer {
+  width: 400px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.kineticText {
+  display: flex;
+  transform-style: preserve-3d;
+}
+
+.kineticLetter {
+  font-family: var(--font-inter);
+  font-size: 3rem;
+  font-weight: 900;
+  color: white;
+  margin: 0 0.1em;
+  display: inline-block;
+  animation: letterWave 2s ease-in-out infinite;
+}
+
+@keyframes letterWave {
+  0%,
+  100% {
+    transform: translateY(0) rotateX(0) rotateZ(0);
+    color: white;
+  }
+  25% {
+    transform: translateY(-20px) rotateX(20deg) rotateZ(5deg);
+    color: var(--accent-cyan);
+  }
+  50% {
+    transform: translateY(0) rotateX(0) rotateZ(0);
+    color: white;
+  }
+  75% {
+    transform: translateY(20px) rotateX(-20deg) rotateZ(-5deg);
+    color: var(--accent-pink);
+  }
+}
+
+/* Call to Action */
+.callToAction {
+  text-align: center;
+  margin-top: 4rem;
+  perspective: 1000px;
+}
+
+.backButton {
+  display: inline-block;
+  background: linear-gradient(
+    135deg,
+    rgba(73, 127, 237, 0.8),
+    rgba(0, 255, 255, 0.8)
+  );
+  color: white;
+  font-family: var(--font-inter);
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
+    inset 0 0 10px rgba(255, 255, 255, 0.5);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  transform-style: preserve-3d;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.backButton::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.8) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  pointer-events: none;
+  transition: transform 0.5s ease;
+}
+
+.backButton:hover {
+  transform: translateY(-5px) rotateX(10deg);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5),
+    inset 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+.backButton:hover::before {
+  transform: translateX(100%) translateY(100%) rotate(45deg);
+}
+
+/* Controls */
+.controls {
+  position: fixed;
+  bottom: 2rem;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  z-index: 100;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.control {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+
+.controlLabel {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: #aaa;
+  margin-bottom: 0.5rem;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 6px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.sliderTrack {
+  position: absolute;
+  height: 100%;
+  background-color: rgba(73, 127, 237, 0.5);
+  border-radius: 3px;
+}
+
+.sliderHandle {
+  position: absolute;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  background-color: var(--accent-cyan);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+}
+
+/* Animation Keyframes */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes rotateCube {
+  0% {
+    transform: rotateX(0) rotateY(0) rotateZ(0);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .section {
+    flex-direction: column;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .sectionTitle::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .dimensionCards {
+    justify-content: center;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .control {
+    width: 80%;
+  }
+
+  .rotatingContainer {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .titleLine {
+    font-size: 4rem;
+  }
+
+  .dimensionCards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .kineticTextContainer {
+    width: 100%;
+  }
+
+  .kineticLetter {
+    font-size: 2rem;
+  }
+}

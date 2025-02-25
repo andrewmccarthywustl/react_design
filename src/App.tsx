@@ -13,6 +13,12 @@ import AnalogGlitch from "./pages/AnalogGlitch/AnalogGlitch";
 import KineticTypography from "./pages/KineticTypography/KineticTypography";
 import LiquidBrutalism from "./pages/LiquidBrutalism/LiquidBrutalism";
 import TypeChaos from "./pages/TypeChaos/TypeChaos";
+import MinimalistDesign from "./pages/MinimalistDesign/MinimalistDesign";
+import RetroBrutalist from "./pages/RetroBrutalist/RetroBrutalist";
+import LiquidMotion from "./pages/LiquidMotion/LiquidMotion";
+import CurvedLines from "./pages/CurvedLines/CurvedLines";
+import SkeletalPerformance from "./pages/SkeletalPerformance/SkeletalPerformance";
+import GeometricStructure from "./pages/GeometricStructure/GeometricStructure";
 
 function App() {
   return (
@@ -31,6 +37,12 @@ function App() {
         <Route path="/kinetic-typography" element={<KineticTypography />} />
         <Route path="/liquid-brutalism" element={<LiquidBrutalism />} />
         <Route path="/type-chaos" element={<TypeChaos />} />
+        <Route path="/retro-brutalist" element={<RetroBrutalist />} />
+        <Route path="/minimalist-design" element={<MinimalistDesign />} />
+        <Route path="/liquid-motion" element={<LiquidMotion />} />
+        <Route path="/curved-lines" element={<CurvedLines />} />
+        <Route path="/skeletal-performance" element={<SkeletalPerformance />} />
+        <Route path="/geometric-structure" element={<GeometricStructure />} />
       </Routes>
     </Layout>
   );

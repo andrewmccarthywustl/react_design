@@ -1,0 +1,392 @@
+/* Base Styles */
+:root {
+  --blue-color: #0088b4;
+  --green-color: #39a87c;
+  --background-color: #f7f7f2;
+  --text-color: #333333;
+  --font-family: "Helvetica Neue", Arial, sans-serif;
+  --transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.page {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+  position: sticky;
+  top: 0;
+  padding: 1rem 0;
+  background-color: var(--background-color);
+  z-index: 10;
+}
+
+.logoContainer {
+  width: 60px;
+  height: 60px;
+}
+
+.curveSvg {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.5s var(--transition-timing),
+    transform 0.5s var(--transition-timing);
+}
+
+.curveSvg.animate {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.bluePath {
+  stroke: var(--blue-color);
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  animation: drawPath 2s var(--transition-timing) forwards;
+}
+
+.greenPath {
+  stroke: var(--green-color);
+  stroke-dasharray: 1500;
+  stroke-dashoffset: 1500;
+  animation: drawPath 2s var(--transition-timing) 0.3s forwards;
+}
+
+@keyframes drawPath {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.navLink {
+  font-size: 1rem;
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 0.5rem 0;
+  position: relative;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: var(--font-family);
+  transition: color 0.3s ease;
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--blue-color);
+  transition: width 0.3s var(--transition-timing);
+}
+
+.navLink.active::after,
+.navLink:hover::after {
+  width: 100%;
+}
+
+.navLink.active {
+  color: var(--blue-color);
+}
+
+/* Hero Section */
+.heroSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 8rem;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.institutions {
+  margin-bottom: 2rem;
+}
+
+.institution {
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.programs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.program h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.fadeInUp {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s var(--transition-timing) forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.heroGraphic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.curveContainer {
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+}
+
+.curvesLarge {
+  width: 100%;
+  height: auto;
+}
+
+.circlePath {
+  stroke-dasharray: 1600;
+  stroke-dashoffset: 1600;
+  animation: drawCircle 2s var(--transition-timing) forwards;
+}
+
+@keyframes drawCircle {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Info Sections */
+.infoSection {
+  margin-bottom: 6rem;
+  scroll-margin-top: 100px;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.sectionTitle::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: var(--green-color);
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.infoText p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.infoVisual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.curvesSmall {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+
+.wavePath {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: drawWave 1.5s var(--transition-timing) forwards;
+}
+
+@keyframes drawWave {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.vertPath {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: drawVert 1.5s var(--transition-timing) forwards;
+}
+
+@keyframes drawVert {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Contact Section */
+.contactSection {
+  margin-bottom: 4rem;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.contactInfo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.contact {
+  margin-bottom: 2rem;
+}
+
+.contactName {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.contact p {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+}
+
+/* Footer */
+.footer {
+  padding-top: 2rem;
+  border-top: 1px solid #ddd;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.backButton {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.backButton:hover {
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+
+.copyright {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .heroSection {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .infoGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .infoVisual {
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .nav {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+  }
+
+  .navLink {
+    white-space: nowrap;
+  }
+
+  .contactInfo {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .program h3 {
+    font-size: 1.25rem;
+  }
+}
