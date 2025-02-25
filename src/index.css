@@ -1,12 +1,12 @@
+/* Custom font imports */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=Montserrat:wght@400;500;700;800;900&family=Oswald:wght@400;500;700&family=Roboto+Condensed:wght@400;700&family=Space+Mono&family=Abril+Fatface&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Press+Start+2P&family=VT323&family=Bungee&family=Six+Caps&family=Monoton&family=Righteous&family=DM+Serif+Display:ital@0;1&display=swap");
+
 /* Global CSS Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-/* Custom font imports */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=Montserrat:wght@400;500;700;800;900&family=Oswald:wght@400;500;700&family=Roboto+Condensed:wght@400;700&family=Space+Mono&family=Abril+Fatface&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Press+Start+2P&family=VT323&family=Bungee&family=Six+Caps&family=Monoton&family=Righteous&family=DM+Serif+Display:ital@0;1&display=swap");
 
 :root {
   /* Base colors */
