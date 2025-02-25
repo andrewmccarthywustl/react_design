@@ -94,21 +94,21 @@ const GeometricStructure = () => {
                 className={styles.textElement}
                 style={{
                   top: "30%",
-                  left: "20%",
+                  left: "10%",
                   animationDelay: "0.2s", // Text appears first now
                 }}
               >
-                Hello
+                Claude 3.7
               </div>
               <div
                 className={styles.textElement}
                 style={{
                   top: "50%",
-                  left: "20%",
+                  left: "30%",
                   animationDelay: "0.4s", // Text appears first now
                 }}
               >
-                To
+                Web Dev
               </div>
               <div
                 className={styles.textElement}
@@ -118,7 +118,7 @@ const GeometricStructure = () => {
                   animationDelay: "0.6s", // Text appears first now
                 }}
               >
-                The World
+                Experimentation
               </div>
             </div>
           </div>
