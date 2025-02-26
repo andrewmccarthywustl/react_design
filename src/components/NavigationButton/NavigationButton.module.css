@@ -1,13 +1,13 @@
 .button {
   display: block;
   width: 100%;
-  padding: 1.5rem;
+  padding: 1.25rem 1rem;
   background-color: var(--primary-black);
   border: 2px solid rgba(255, 255, 255, 0.1);
   text-align: center;
   font-family: var(--font-inter);
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
@@ -67,4 +67,60 @@
 
 .pink {
   color: var(--accent-pink);
+}
+
+.blue {
+  color: var(--accent-blue);
+}
+
+.purple {
+  color: var(--accent-purple);
+}
+
+.orange {
+  color: var(--accent-orange);
+}
+
+.magenta {
+  color: var(--accent-magenta);
+}
+
+.lime {
+  color: #aaff00;
+}
+
+.teal {
+  color: #00c6b5;
+}
+
+.indigo {
+  color: #6610f2;
+}
+
+.amber {
+  color: #ffc107;
+}
+
+.coral {
+  color: #ff6b6b;
+}
+
+.turquoise {
+  color: #40e0d0;
+}
+
+.lavender {
+  color: #9e94ff;
+}
+
+.rose {
+  color: #ff66a5;
+}
+
+.gold {
+  color: #ffd700;
+}
+
+.emerald {
+  color: #50c878;
 }

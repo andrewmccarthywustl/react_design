@@ -19,7 +19,7 @@ const HomePage = () => {
             <NavigationButton
               to="/neo-brutalist"
               label="Neo-Brutalist"
-              colorScheme="default"
+              colorScheme="red"
             />
           </div>
           <div className={styles.gridItem}>
@@ -40,7 +40,7 @@ const HomePage = () => {
             <NavigationButton
               to="/concrete-modernism"
               label="Concrete Modernism"
-              colorScheme="default"
+              colorScheme="green"
             />
           </div>
           <div className={styles.gridItem}>
@@ -54,91 +54,112 @@ const HomePage = () => {
             <NavigationButton
               to="/tech-constructivism"
               label="Tech Constructivism"
-              colorScheme="red"
+              colorScheme="blue"
             />
           </div>
           <div className={styles.gridItem}>
             <NavigationButton
               to="/vapor-dimension"
               label="Vapor Dimension"
-              colorScheme="cyan"
+              colorScheme="purple"
             />
           </div>
           <div className={styles.gridItem}>
             <NavigationButton
               to="/data-maximalism"
               label="Data Maximalism"
-              colorScheme="yellow"
+              colorScheme="orange"
             />
           </div>
           <div className={styles.gridItem}>
             <NavigationButton
               to="/analog-glitch"
               label="Analog Glitch"
-              colorScheme="pink"
+              colorScheme="magenta"
             />
           </div>
           <div className={styles.gridItem}>
             <NavigationButton
               to="/kinetic-typography"
               label="Kinetic Typography"
-              colorScheme="green"
+              colorScheme="lime"
             />
           </div>
           <div className={styles.gridItem}>
             <NavigationButton
               to="/liquid-brutalism"
               label="Liquid Brutalism"
-              colorScheme="red"
+              colorScheme="teal"
             />
           </div>
           <div className={styles.gridItem}>
             <NavigationButton
               to="/type-chaos"
               label="Type Chaos"
-              colorScheme="default"
+              colorScheme="indigo"
             />
           </div>
           <div className={styles.gridItem}>
             <NavigationButton
               to="/minimalist-design"
               label="Minimalist Design"
-              colorScheme="default"
+              colorScheme="amber"
             />
           </div>
           <div className={styles.gridItem}>
             <NavigationButton
               to="/retro-brutalist"
               label="Retro Brutalist"
-              colorScheme="cyan"
+              colorScheme="coral"
             />
           </div>
           <div className={styles.gridItem}>
             <NavigationButton
               to="/liquid-motion"
               label="Liquid Motion"
-              colorScheme="cyan"
+              colorScheme="turquoise"
             />
           </div>
           <div className={styles.gridItem}>
             <NavigationButton
               to="/curved-lines"
               label="Curved Lines"
-              colorScheme="cyan"
+              colorScheme="lavender"
             />
           </div>
           <div className={styles.gridItem}>
             <NavigationButton
               to="/skeletal-performance"
               label="Skeletal Performance"
-              colorScheme="cyan"
+              colorScheme="rose"
             />
           </div>
           <div className={styles.gridItem}>
             <NavigationButton
               to="/geometric-structure"
               label="Geometric Structure"
+              colorScheme="gold"
+            />
+          </div>
+          <div className={styles.gridItem}>
+            <NavigationButton
+              to="/hokusai-wave"
+              label="Hokusai Wave"
+              colorScheme="emerald"
+            />
+          </div>
+          <div className={styles.gridItem}>
+            <NavigationButton
+              to="/animated-shapes"
+              label="Animated Shapes"
               colorScheme="cyan"
+            />
+          </div>
+          <div className={styles.gridItem}>
+            <NavigationButton
+              to="/deep-blue"
+              label="Deep Blue"
+              colorScheme="blue"
             />
           </div>
         </div>

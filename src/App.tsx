@@ -19,10 +19,15 @@ import LiquidMotion from "./pages/LiquidMotion/LiquidMotion";
 import CurvedLines from "./pages/CurvedLines/CurvedLines";
 import SkeletalPerformance from "./pages/SkeletalPerformance/SkeletalPerformance";
 import GeometricStructure from "./pages/GeometricStructure/GeometricStructure";
+import HokusaiWave from "./pages/HokusaiWave/HokusaiWave";
+import AnimatedShapes from "./pages/AnimatedShapes/AnimatedShapes";
+import DeepBlue from "./pages/DeepBlue/DeepBlue";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 function App() {
   return (
     <Layout>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/neo-brutalist" element={<NeoBrutalist />} />
@@ -43,6 +48,9 @@ function App() {
         <Route path="/curved-lines" element={<CurvedLines />} />
         <Route path="/skeletal-performance" element={<SkeletalPerformance />} />
         <Route path="/geometric-structure" element={<GeometricStructure />} />
+        <Route path="/hokusai-wave" element={<HokusaiWave />} />
+        <Route path="/animated-shapes" element={<AnimatedShapes />} />
+        <Route path="/deep-blue" element={<DeepBlue />} />
       </Routes>
     </Layout>
   );
