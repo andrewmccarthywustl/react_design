@@ -162,6 +162,14 @@ const HomePage = () => {
               colorScheme="blue"
             />
           </div>
+          <div className={styles.gridItem}>
+            <NavigationButton
+              to="/mononoke"
+              label="Princess Mononoke"
+              colorScheme="red"
+            />
+          </div>
+          <NavigationButton to="/syth" label="Syth Band" colorScheme="red" />
         </div>
       </div>
     </div>

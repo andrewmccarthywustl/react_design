@@ -22,6 +22,9 @@ import GeometricStructure from "./pages/GeometricStructure/GeometricStructure";
 import HokusaiWave from "./pages/HokusaiWave/HokusaiWave";
 import AnimatedShapes from "./pages/AnimatedShapes/AnimatedShapes";
 import DeepBlue from "./pages/DeepBlue/DeepBlue";
+import Mononoke from "./pages/Mononoke/Mononoke";
+import Syth from "./pages/Syth/Syth";
+
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 function App() {
@@ -51,6 +54,8 @@ function App() {
         <Route path="/hokusai-wave" element={<HokusaiWave />} />
         <Route path="/animated-shapes" element={<AnimatedShapes />} />
         <Route path="/deep-blue" element={<DeepBlue />} />
+        <Route path="/mononoke" element={<Mononoke />} />
+        <Route path="/syth" element={<Syth />} />
       </Routes>
     </Layout>
   );

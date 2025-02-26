@@ -1,0 +1,389 @@
+.page {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  background-color: #0a2e1a;
+}
+
+.parallaxContainer {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 10px;
+  scroll-behavior: smooth;
+}
+
+.header {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+}
+
+.forestBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  transform: translateZ(-10px) scale(2);
+}
+
+.titleContainer {
+  text-align: center;
+  transform: translateZ(-5px) scale(1.5);
+  z-index: 1;
+}
+
+.japaneseTitle {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: clamp(3rem, 10vw, 7rem);
+  color: white;
+  margin: 0;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  letter-spacing: 0.1em;
+}
+
+.englishTitle {
+  font-family: "Noto Serif", serif;
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  color: white;
+  margin: 1rem 0 0;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  letter-spacing: 0.2em;
+  font-weight: 400;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at center,
+    transparent 30%,
+    rgba(10, 46, 26, 0.6) 80%
+  );
+  z-index: 0;
+}
+
+.scrollHint {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.8;
+  animation: fadeInOut 2s infinite;
+  z-index: 2;
+}
+
+.scrollText {
+  font-family: "Noto Serif", serif;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.scrollArrow {
+  width: 30px;
+  height: 30px;
+}
+
+.content {
+  position: relative;
+  background: linear-gradient(to bottom, #0a2e1a 0%, #164a32 50%, #0a2e1a 100%);
+  z-index: 2;
+  padding: 4rem 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section {
+  margin-bottom: 6rem;
+}
+
+.sectionTitle {
+  font-family: "Noto Serif", serif;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  color: #e6b78e;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.sectionTitle::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: #e45240;
+}
+
+.text {
+  font-family: "Noto Sans", sans-serif;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.8;
+  color: #e6e6e6;
+  margin-bottom: 2rem;
+  max-width: 800px;
+}
+
+.storyContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .storyContainer {
+    grid-template-columns: 1fr;
+  }
+}
+
+.storyText {
+  font-family: "Noto Sans", sans-serif;
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  line-height: 1.8;
+  color: #e6e6e6;
+}
+
+.characterImage {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  display: block;
+}
+
+.characterName {
+  font-family: "Noto Serif", serif;
+  font-size: 1.5rem;
+  color: #e6b78e;
+  margin: 1rem 0 0.5rem;
+  text-align: center;
+}
+
+.characterDescription {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #e6e6e6;
+  text-align: center;
+}
+
+.characterGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.characterCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quoteContainer {
+  max-width: 800px;
+  margin: 5rem auto;
+  padding: 3rem;
+  background-color: rgba(14, 55, 31, 0.7);
+  border-left: 4px solid #e45240;
+  position: relative;
+}
+
+.quoteContainer::before {
+  content: '"';
+  position: absolute;
+  top: 0;
+  left: 20px;
+  font-size: 6rem;
+  color: rgba(228, 82, 64, 0.3);
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+
+.quote {
+  font-family: "Noto Serif", serif;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  line-height: 1.6;
+  color: #e6e6e6;
+  font-style: italic;
+}
+
+.quoteAuthor {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 1rem;
+  color: #e6b78e;
+  text-align: right;
+  margin-top: 1.5rem;
+}
+
+.themesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.themeCard {
+  background-color: rgba(14, 55, 31, 0.5);
+  padding: 2rem;
+  border-radius: 4px;
+  border-top: 3px solid #e6b78e;
+}
+
+.themeTitle {
+  font-family: "Noto Serif", serif;
+  font-size: 1.5rem;
+  color: #e6b78e;
+  margin-bottom: 1rem;
+}
+
+.themeText {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #e6e6e6;
+}
+
+.footer {
+  background-color: #051a10;
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+}
+
+.footerText {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 1rem;
+  color: #999;
+  margin-bottom: 2rem;
+}
+
+.footerLink {
+  font-family: "Noto Serif", serif;
+  color: #e6b78e;
+  text-decoration: none;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid #e6b78e;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.footerLink:hover {
+  background-color: rgba(230, 183, 142, 0.1);
+}
+
+.kodamaContainer {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 100px;
+  height: 100px;
+}
+
+.kodama {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.7;
+  animation: fadeInOut 4s infinite;
+}
+
+.spiritContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.spirit {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(126, 233, 184, 0.6);
+  border-radius: 50%;
+  filter: blur(5px);
+  animation: float 20s infinite linear;
+}
+
+.backLink {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  z-index: 100;
+  color: white;
+  text-decoration: none;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.backLink:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.backLinkIcon {
+  margin-right: 0.5rem;
+}
+
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(20px);
+    opacity: 0;
+  }
+}
+
+@keyframes glowing {
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(126, 233, 184, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(126, 233, 184, 0.8);
+  }
+}

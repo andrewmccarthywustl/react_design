@@ -65,10 +65,13 @@
   overflow: hidden;
   border: 8px solid #0d3b66;
   box-shadow: 10px 10px 0 rgba(13, 59, 102, 0.2);
-  background-image: url("great_wave.jpeg");
   background-size: cover;
   background-position: center;
   aspect-ratio: 4/3;
+}
+
+.waveImage {
+  width: 110%;
 }
 
 .stamp {

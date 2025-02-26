@@ -22,6 +22,7 @@ const HokusaiWave = () => {
         <div className={styles.mainContent}>
           <div className={styles.waveBox}>
             <div className={styles.stamp}>浮世絵</div>
+            <img src="great_wave.webp" alt="" className={styles.waveImage} />
           </div>
 
           <div className={styles.textPanel}>
