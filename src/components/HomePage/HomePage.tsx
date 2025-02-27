@@ -169,6 +169,13 @@ const HomePage = () => {
               colorScheme="red"
             />
           </div>
+          <div className={styles.gridItem}>
+            <NavigationButton
+              to="/design-system"
+              label="Design System"
+              colorScheme="green"
+            />
+          </div>
           <NavigationButton to="/syth" label="Syth Band" colorScheme="red" />
         </div>
       </div>

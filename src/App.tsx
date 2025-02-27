@@ -24,7 +24,7 @@ import AnimatedShapes from "./pages/AnimatedShapes/AnimatedShapes";
 import DeepBlue from "./pages/DeepBlue/DeepBlue";
 import Mononoke from "./pages/Mononoke/Mononoke";
 import Syth from "./pages/Syth/Syth";
-
+import DesignSystem from "./pages/DesignSystem/DesignSystem";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 function App() {
@@ -56,6 +56,7 @@ function App() {
         <Route path="/deep-blue" element={<DeepBlue />} />
         <Route path="/mononoke" element={<Mononoke />} />
         <Route path="/syth" element={<Syth />} />
+        <Route path="/design-system" element={<DesignSystem />} />
       </Routes>
     </Layout>
   );
