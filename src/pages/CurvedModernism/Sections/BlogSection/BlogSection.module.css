@@ -5,6 +5,7 @@
   background-color: var(--cm-gray-light);
   width: calc(100% + var(--cm-spacing-md) * 2);
   margin-left: calc(var(--cm-spacing-md) / -1);
+  color: var(--cm-text-dark);
 }
 
 .grid {

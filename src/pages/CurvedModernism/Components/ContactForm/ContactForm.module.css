@@ -31,7 +31,7 @@
   padding: var(--cm-spacing-sm);
   border: none;
   border-left: 3px solid var(--cm-primary-blue);
-  background-color: var(--cm-gray-light);
+  background-color: white;
 }
 
 .textarea {

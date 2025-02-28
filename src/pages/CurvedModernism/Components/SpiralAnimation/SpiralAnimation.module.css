@@ -1,0 +1,40 @@
+/* SpiralAnimation.module.css */
+.spiralSvg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.path {
+  /* Initial setup - both stroke and fill */
+  stroke-width: 2px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill-opacity: 0;
+}
+
+.bluePath {
+  fill: var(--cm-primary-blue);
+}
+
+.greenPath {
+  fill: var(--cm-primary-green);
+}
+
+@keyframes fillPath {
+  0% {
+    fill-opacity: 0;
+  }
+  /* Start filling just as the stroke starts to draw */
+
+  /* Gradually increase opacity as the stroke is drawn */
+  100% {
+    fill-opacity: 1; /* Adjust this value for desired fill opacity */
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .path {
+    animation-duration: 0.1s !important;
+  }
+}

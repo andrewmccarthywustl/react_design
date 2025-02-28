@@ -1,0 +1,50 @@
+/* Components/Header/Header.module.css */
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: var(--cm-background);
+  z-index: 10;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.headerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: var(--cm-spacing-md);
+  padding-right: var(--cm-spacing-md);
+}
+
+.logoContainer {
+  width: 60px;
+  height: 60px;
+}
+
+.logoSvg {
+  width: 100%;
+  height: 100%;
+}
+
+.logoPath {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: drawPath 1.5s var(--cm-transition-medium) forwards;
+}
+
+@keyframes drawPath {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .headerContent {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+}

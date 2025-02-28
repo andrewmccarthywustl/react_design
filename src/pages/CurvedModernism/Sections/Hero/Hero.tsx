@@ -2,6 +2,8 @@
 import React from "react";
 import styles from "./Hero.module.css";
 import CircleAnimation from "../../Components/CircleAnimation/CircleAnimation";
+import SpiralAnimation from "../../Components/SpiralAnimation/SpiralAnimation";
+// import SpiralAnimation2 from "../../Components/SpiralAnimation2/SpiralAnimation2";
 
 interface HeroProps {
   institution1: string;
@@ -51,7 +53,7 @@ const Hero: React.FC<HeroProps> = ({
 
       <div className={styles.heroGraphic}>
         <div className={styles.curveContainer}>
-          <CircleAnimation />
+          <SpiralAnimation />
         </div>
       </div>
     </section>

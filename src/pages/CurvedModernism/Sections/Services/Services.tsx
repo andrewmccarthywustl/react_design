@@ -32,32 +32,6 @@ const Services: React.FC<ServicesProps> = ({ id, title, services }) => {
           </div>
         ))}
       </div>
-
-      <div className={styles.patternContainer}>
-        <svg
-          className={styles.pattern}
-          viewBox="0 0 600 100"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          {[...Array(5)].map((_, i) => (
-            <path
-              key={`wave-${i}`}
-              d={`M0,${20 + i * 15} Q150,${i % 2 === 0 ? 50 : 0} 300,${
-                20 + i * 15
-              } Q450,${i % 2 === 0 ? 0 : 50} 600,${20 + i * 15}`}
-              fill="none"
-              stroke={
-                i % 2 === 0
-                  ? "var(--cm-primary-blue)"
-                  : "var(--cm-primary-green)"
-              }
-              strokeWidth="2"
-              className={styles.wavePath}
-              style={{ animationDelay: `${i * 0.1}s` }}
-            />
-          ))}
-        </svg>
-      </div>
     </section>
   );
 };

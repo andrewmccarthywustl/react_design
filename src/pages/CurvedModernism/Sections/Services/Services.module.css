@@ -3,6 +3,7 @@
   padding: var(--cm-spacing-xl) 0;
   scroll-margin-top: 100px;
   position: relative;
+  color: var(--cm-text-dark);
 }
 
 .grid {

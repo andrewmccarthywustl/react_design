@@ -1,52 +1,22 @@
-/* CurvedModernismStyles.module.css (revised) */
+/* CurvedModernismStyles.module.css (updated) */
 @import url("./CurvedModernismVariables.module.css");
 
-.pageContainer {
+.page {
   width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 var(--cm-spacing-md);
   background-color: var(--cm-background);
   color: var(--cm-text-dark);
   font-family: var(--cm-font-primary);
 }
+
 .background {
   background-color: var(--cm-background);
 }
 
-/* Header styles */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2rem 0;
-  margin-bottom: 4rem;
-  position: sticky;
-  top: 0;
-  background-color: var(--cm-background);
-  z-index: 10;
-}
-
-.logoContainer {
-  width: 60px;
-  height: 60px;
-}
-
-.logoSvg {
+.pageContainer {
   width: 100%;
-  height: 100%;
-}
-
-.logoPath {
-  stroke-dasharray: 200;
-  stroke-dashoffset: 200;
-  animation: drawPath 1.5s var(--cm-transition-medium) forwards;
-}
-
-@keyframes drawPath {
-  to {
-    stroke-dashoffset: 0;
-  }
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--cm-spacing-md);
 }
 
 /* Grid layouts */
@@ -117,12 +87,6 @@
 }
 
 @media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    gap: 1.5rem;
-    align-items: flex-start;
-  }
-
   .gridContainer {
     grid-template-columns: repeat(2, 1fr);
   }

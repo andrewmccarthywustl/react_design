@@ -2,6 +2,7 @@
 .portfolio {
   padding: var(--cm-spacing-xl) 0;
   scroll-margin-top: 100px;
+  color: var(--cm-text-dark);
 }
 
 .grid {

@@ -7,9 +7,7 @@ import Services from "./Sections/Services/Services";
 import Portfolio from "./Sections/Portfolio/Portfolio";
 import BlogSection from "./Sections/BlogSection/BlogSection";
 import Contact from "./Sections/Contact/Contact";
-import Nav from "./Components/Nav/Nav";
-import CircleAnimation from "./Components/CircleAnimation/CircleAnimation";
-import { TbBackground } from "react-icons/tb";
+import Header from "./Components/Header/Header";
 
 const CurvedModernism: React.FC = () => {
   const [activeSection, setActiveSection] = useState("program");
@@ -48,18 +46,12 @@ const CurvedModernism: React.FC = () => {
 
   return (
     <div className={styles.background}>
+      <Header
+        activeSection={activeSection}
+        onSectionChange={setActiveSection}
+        navItems={navItems}
+      />
       <div className={styles.pageContainer}>
-        <header className={styles.header}>
-          <div className={styles.logoContainer}>
-            <CircleAnimation />
-          </div>
-          <Nav
-            activeSection={activeSection}
-            onSectionChange={setActiveSection}
-            navItems={navItems}
-          />
-        </header>
-
         <Hero
           institution1="Design Innovation"
           institution2="Creative Solutions"

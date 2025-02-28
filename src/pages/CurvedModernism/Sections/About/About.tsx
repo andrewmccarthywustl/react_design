@@ -2,7 +2,6 @@
 import React from "react";
 import styles from "./About.module.css";
 import Title from "../../Components/Title/Title";
-import FlowLine from "../../Components/FlowLine/FlowLine";
 
 interface Value {
   title: string;
@@ -35,10 +34,7 @@ const About: React.FC<AboutProps> = ({ title, description, values }) => {
 
         <div className={styles.graphicColumn}>
           <div className={styles.graphicContainer}>
-            <FlowLine type="wave" color="blue" />
-            <div className={styles.overlayGraphic}>
-              <FlowLine type="circular" color="green" />
-            </div>
+            <div className={styles.overlayGraphic}></div>
           </div>
         </div>
       </div>
