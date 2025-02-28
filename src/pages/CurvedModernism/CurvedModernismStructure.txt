@@ -1,0 +1,42 @@
+CurvedModernism/
+|- CurvedModernism.tsx
+|- CurvedModernismStyles.module.css
+|- CurvedModernismVariables.module.css
+|- Sections/
+   |- Hero/
+      |- Hero.tsx
+      |- Hero.module.css
+   |- About/
+      |- About.tsx
+      |- About.module.css
+   |- Services/
+      |- Services.tsx
+      |- Services.module.css
+   |- Portfolio/
+      |- Portfolio.tsx
+      |- Portfolio.module.css
+   |- BlogSection/
+      |- BlogSection.tsx
+      |- BlogSection.module.css
+   |- Contact/
+      |- Contact.tsx
+      |- Contact.module.css
+|- Components/
+   |- Title/
+      |- Title.tsx
+      |- Title.module.css
+   |- Card/
+      |- Card.tsx
+      |- Card.module.css
+   |- BlogPost/
+      |- BlogPost.tsx
+      |- BlogPost.module.css
+   |- ContactForm/
+      |- ContactForm.tsx
+      |- ContactForm.module.css
+   |- CircularDivider/
+      |- CircularDivider.tsx
+      |- CircularDivider.module.css
+   |- FlowLine/
+      |- FlowLine.tsxC
+      |- FlowLine.module.css

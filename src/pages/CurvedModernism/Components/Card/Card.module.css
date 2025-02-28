@@ -1,0 +1,63 @@
+/* Card.module.css (revised) */
+.card {
+  position: relative;
+  height: 100%;
+  border-left: 5px solid transparent;
+  background-color: var(--cm-gray-light);
+  transition: transform 0.3s var(--cm-transition-medium);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.blue {
+  border-color: var(--cm-primary-blue);
+}
+
+.green {
+  border-color: var(--cm-primary-green);
+}
+
+.contentContainer {
+  padding: var(--cm-spacing-md);
+}
+
+.index {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--cm-gray-medium);
+  color: var(--cm-text-dark);
+  font-size: 1.5rem;
+  font-weight: 700;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-family: var(--cm-font-primary);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 var(--cm-spacing-sm) 0;
+  color: var(--cm-text-dark);
+}
+
+.content {
+  font-family: var(--cm-font-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  color: var(--cm-text-dark);
+}
+
+.blue .title {
+  color: var(--cm-primary-blue);
+}
+
+.green .title {
+  color: var(--cm-primary-green);
+}

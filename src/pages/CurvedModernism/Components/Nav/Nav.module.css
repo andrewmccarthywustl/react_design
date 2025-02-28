@@ -1,0 +1,51 @@
+/* Components/Nav/Nav.module.css */
+.nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.navLink {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--cm-text-dark);
+  text-decoration: none;
+  padding: 0.5rem 0;
+  position: relative;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: var(--cm-font-primary);
+  transition: color 0.3s ease;
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--cm-primary-blue);
+  transition: width 0.3s var(--cm-transition-medium);
+}
+
+.navLink.active::after,
+.navLink:hover::after {
+  width: 100%;
+}
+
+.navLink.active {
+  color: var(--cm-primary-blue);
+}
+
+@media (max-width: 768px) {
+  .nav {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+  }
+
+  .navLink {
+    white-space: nowrap;
+  }
+}

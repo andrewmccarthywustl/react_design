@@ -1,0 +1,34 @@
+/* CircularDivider.module.css */
+.divider {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: var(--cm-spacing-xl) 0;
+}
+
+.line {
+  flex-grow: 1;
+  height: 2px;
+}
+
+.circle {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--cm-border-radius-circle);
+}
+
+.blue .line {
+  background-color: var(--cm-primary-blue);
+}
+
+.blue .circle {
+  background-color: var(--cm-primary-blue);
+}
+
+.green .line {
+  background-color: var(--cm-primary-green);
+}
+
+.green .circle {
+  background-color: var(--cm-primary-green);
+}

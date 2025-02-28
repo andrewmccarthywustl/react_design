@@ -1,0 +1,121 @@
+/* Portfolio.module.css (revised) */
+.portfolio {
+  padding: var(--cm-spacing-xl) 0;
+  scroll-margin-top: 100px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(var(--cm-grid-columns), 1fr);
+  gap: var(--cm-spacing-md);
+  margin-top: var(--cm-spacing-md);
+}
+
+.projectItem {
+  grid-column: span 1;
+}
+
+.featured {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.secondary {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.projectLink {
+  display: block;
+  text-decoration: none;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 75%; /* 4:3 aspect ratio */
+  overflow: hidden;
+  background-color: var(--cm-gray-light);
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--cm-transition-medium);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity var(--cm-transition-medium);
+  display: flex;
+  align-items: flex-end;
+}
+
+.projectInfo {
+  padding: var(--cm-spacing-md);
+  width: 100%;
+}
+
+.category {
+  display: inline-block;
+  font-family: var(--cm-font-mono);
+  font-size: 0.75rem;
+  color: var(--cm-text-light);
+  padding: 4px 8px;
+  margin-bottom: var(--cm-spacing-xs);
+  background-color: var(--cm-primary-blue);
+}
+
+.projectTitle {
+  font-family: var(--cm-font-primary);
+  font-size: 1.25rem;
+  color: var(--cm-text-light);
+  margin: 0;
+}
+
+.projectLink:hover .image {
+  transform: scale(1.05);
+}
+
+.projectLink:hover .overlay {
+  opacity: 1;
+}
+
+@media (max-width: 1024px) {
+  .projectItem,
+  .featured {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .projectItem,
+  .featured {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projectItem,
+  .featured {
+    grid-column: 1 / -1;
+  }
+}

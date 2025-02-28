@@ -1,0 +1,17 @@
+/* Components/CircleAnimation/CircleAnimation.module.css */
+.circlesSvg {
+  width: 100%;
+  height: auto;
+}
+
+.circlePath {
+  stroke-dasharray: 1600;
+  stroke-dashoffset: 1600;
+  animation: drawCircle 2s var(--cm-transition-medium) forwards;
+}
+
+@keyframes drawCircle {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

@@ -1,0 +1,99 @@
+/* Title.module.css */
+.container {
+  margin-bottom: var(--cm-spacing-md);
+  position: relative;
+}
+
+.title {
+  font-family: var(--cm-font-primary);
+  margin: 0;
+  padding: 0;
+}
+
+.alignLeft {
+  text-align: left;
+}
+
+.alignCenter {
+  text-align: center;
+}
+
+.alignRight {
+  text-align: right;
+}
+
+.sizeLarge {
+  font-size: 3rem;
+  line-height: 1.2;
+}
+
+.sizeMedium {
+  font-size: 2.25rem;
+  line-height: 1.3;
+}
+
+.sizeSmall {
+  font-size: 1.5rem;
+  line-height: 1.4;
+}
+
+.colorDark {
+  color: var(--cm-text-dark);
+}
+
+.colorLight {
+  color: var(--cm-text-light);
+}
+
+.colorBlue {
+  color: var(--cm-primary-blue);
+}
+
+.colorGreen {
+  color: var(--cm-primary-green);
+}
+
+.line {
+  width: 60px;
+  height: 4px;
+  margin-top: var(--cm-spacing-sm);
+}
+
+.colorDarkLine {
+  background-color: var(--cm-text-dark);
+}
+
+.colorLightLine {
+  background-color: var(--cm-text-light);
+}
+
+.colorBlueLine {
+  background-color: var(--cm-primary-blue);
+}
+
+.colorGreenLine {
+  background-color: var(--cm-primary-green);
+}
+
+.alignCenter .line {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.alignRight .line {
+  margin-left: auto;
+}
+
+@media (max-width: 768px) {
+  .sizeLarge {
+    font-size: 2.5rem;
+  }
+
+  .sizeMedium {
+    font-size: 1.75rem;
+  }
+
+  .sizeSmall {
+    font-size: 1.25rem;
+  }
+}

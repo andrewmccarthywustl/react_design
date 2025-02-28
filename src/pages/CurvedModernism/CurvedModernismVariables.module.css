@@ -1,0 +1,35 @@
+/* CurvedModernismVariables.module.css */
+:root {
+  /* Color palette inspired by the reference image */
+  --cm-primary-blue: #0088b4;
+  --cm-secondary-blue: #00a8e0;
+  --cm-primary-green: #39a87c;
+  --cm-secondary-green: #5cb882;
+  --cm-background: #ffffff;
+  --cm-text-dark: #333333;
+  --cm-text-light: #ffffff;
+  --cm-gray-light: #f7f7f2;
+  --cm-gray-medium: #e0e0e0;
+
+  /* Typography */
+  --cm-font-primary: "Helvetica Neue", Arial, sans-serif;
+  --cm-font-secondary: "Helvetica Neue", Arial, sans-serif;
+  --cm-font-mono: "Courier New", monospace;
+
+  /* Spacing */
+  --cm-spacing-xs: 0.5rem;
+  --cm-spacing-sm: 1rem;
+  --cm-spacing-md: 2rem;
+  --cm-spacing-lg: 4rem;
+  --cm-spacing-xl: 8rem;
+
+  /* Grid */
+  --cm-grid-columns: 5;
+  --cm-column-gap: 2rem;
+  --cm-row-gap: 2rem;
+
+  /* Animation */
+  --cm-transition-fast: 0.2s ease;
+  --cm-transition-medium: cubic-bezier(0.4, 0, 0.2, 1) 0.5s;
+  --cm-transition-slow: 1s ease;
+}

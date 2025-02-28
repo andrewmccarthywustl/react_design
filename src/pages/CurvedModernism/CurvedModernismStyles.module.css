@@ -1,0 +1,139 @@
+/* CurvedModernismStyles.module.css (revised) */
+@import url("./CurvedModernismVariables.module.css");
+
+.pageContainer {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--cm-spacing-md);
+  background-color: var(--cm-background);
+  color: var(--cm-text-dark);
+  font-family: var(--cm-font-primary);
+}
+.background {
+  background-color: var(--cm-background);
+}
+
+/* Header styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+  margin-bottom: 4rem;
+  position: sticky;
+  top: 0;
+  background-color: var(--cm-background);
+  z-index: 10;
+}
+
+.logoContainer {
+  width: 60px;
+  height: 60px;
+}
+
+.logoSvg {
+  width: 100%;
+  height: 100%;
+}
+
+.logoPath {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: drawPath 1.5s var(--cm-transition-medium) forwards;
+}
+
+@keyframes drawPath {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Grid layouts */
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(var(--cm-grid-columns), 1fr);
+  gap: var(--cm-column-gap) var(--cm-row-gap);
+  width: 100%;
+}
+
+.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.span2 {
+  grid-column: span 2;
+}
+
+.span3 {
+  grid-column: span 3;
+}
+
+.span4 {
+  grid-column: span 4;
+}
+
+/* Utility classes */
+.flexRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.alignCenter {
+  align-items: center;
+}
+
+.justifyCenter {
+  justify-content: center;
+}
+
+.spaceBetween {
+  justify-content: space-between;
+}
+
+.fadeInUp {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s var(--cm-transition-medium) forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1024px) {
+  .gridContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .gridContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .pageContainer {
+    padding: 0 1rem;
+  }
+
+  .gridContainer {
+    grid-template-columns: 1fr;
+  }
+}

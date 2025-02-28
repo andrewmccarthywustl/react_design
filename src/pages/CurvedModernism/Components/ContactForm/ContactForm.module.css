@@ -1,0 +1,70 @@
+/* Components/ContactForm/ContactForm.module.css */
+.form {
+  width: 100%;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--cm-spacing-md);
+  margin-bottom: var(--cm-spacing-md);
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--cm-spacing-md);
+}
+
+.label {
+  font-family: var(--cm-font-primary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: var(--cm-spacing-xs);
+  color: var(--cm-text-dark);
+}
+
+.input,
+.textarea {
+  font-family: var(--cm-font-primary);
+  font-size: 1rem;
+  padding: var(--cm-spacing-sm);
+  border: none;
+  border-left: 3px solid var(--cm-primary-blue);
+  background-color: var(--cm-gray-light);
+}
+
+.textarea {
+  resize: vertical;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-left-color: var(--cm-primary-green);
+  background-color: #fff;
+}
+
+.button {
+  font-family: var(--cm-font-primary);
+  font-size: 1rem;
+  font-weight: 500;
+  padding: var(--cm-spacing-sm) var(--cm-spacing-lg);
+  background-color: var(--cm-primary-blue);
+  color: var(--cm-text-light);
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--cm-transition-fast);
+  align-self: flex-start;
+}
+
+.button:hover {
+  background-color: var(--cm-primary-green);
+}
+
+@media (max-width: 768px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}

@@ -26,6 +26,7 @@ import Mononoke from "./pages/Mononoke/Mononoke";
 import Syth from "./pages/Syth/Syth";
 import DesignSystem from "./pages/DesignSystem/DesignSystem";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
+import CurvedModernism from "./pages/CurvedModernism/CurvedModernism";
 
 function App() {
   return (
@@ -57,6 +58,7 @@ function App() {
         <Route path="/mononoke" element={<Mononoke />} />
         <Route path="/syth" element={<Syth />} />
         <Route path="/design-system" element={<DesignSystem />} />
+        <Route path="/curved-modernism" element={<CurvedModernism />} />
       </Routes>
     </Layout>
   );
