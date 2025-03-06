@@ -53,9 +53,9 @@ const CurvedModernism: React.FC = () => {
       />
       <div className={styles.pageContainer}>
         <Hero
-          institution1="Design Innovation"
+          institution1="Ai Doesn't Have to be"
           institution2="Creative Solutions"
-          title={["Modern Design", "Studio"]}
+          title={["Ailex", "Consulting"]}
           programs={[
             "Brand Identity",
             "Digital Design",

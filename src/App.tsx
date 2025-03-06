@@ -27,6 +27,8 @@ import Syth from "./pages/Syth/Syth";
 import DesignSystem from "./pages/DesignSystem/DesignSystem";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import CurvedModernism from "./pages/CurvedModernism/CurvedModernism";
+import Syth2 from "./pages/Syth2/Syth2";
+import MidCenturyConstructivism from "./pages/MidCenturyConstructivism/MidCenturyConstructivism";
 
 function App() {
   return (
@@ -59,6 +61,11 @@ function App() {
         <Route path="/syth" element={<Syth />} />
         <Route path="/design-system" element={<DesignSystem />} />
         <Route path="/curved-modernism" element={<CurvedModernism />} />
+        <Route path="/syth2" element={<Syth2 />} />
+        <Route
+          path="/mid-century-constructivism"
+          element={<MidCenturyConstructivism />}
+        />
       </Routes>
     </Layout>
   );

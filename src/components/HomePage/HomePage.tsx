@@ -183,6 +183,21 @@ const HomePage = () => {
               colorScheme="blue"
             />
           </div>
+          <div className={styles.gridItem}>
+            <NavigationButton
+              to="/syth2"
+              label="SYTH teal "
+              colorScheme="blue"
+            />
+          </div>
+          <div>
+            <NavigationButton
+              to="/mid-century-constructivism"
+              label="mid-century constructivism"
+              colorScheme="pink"
+            />
+          </div>
+
           <NavigationButton to="/syth" label="Syth Band" colorScheme="red" />
         </div>
       </div>

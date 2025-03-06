@@ -1,39 +1,36 @@
 /* SpiralAnimation.module.css */
 .spiralSvg {
-  width: 100%;
+  width: auto;
   height: auto;
   overflow: visible;
 }
 
 .path {
-  stroke-width: 25px;
+  stroke-width: 10px;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-dasharray: 15000;
-
-  /* animation: drawSpiral 2s forwards var(--cm-transition-medium); */
+  animation: drawSpiralbackwards 5s forwards var(--cm-transition-medium);
   fill-opacity: 0;
 }
 
 .bluePath {
-  fill: var(--cm-primary-blue);
-  stroke: white;
-  animation: drawSpiralbackwards 3s forwards var(--cm-transition-medium);
+  stroke: var(--cm-primary-blue);
+  /* animation: drawSpiralforward 3s forwards var(--cm-transition-medium); */
 }
 
 .greenPath {
-  fill: var(--cm-primary-green);
-  stroke: white;
-  animation: drawSpiralbackwards 3s forwards var(--cm-transition-medium);
+  stroke: var(--cm-primary-green);
+  /* animation: drawSpdrawSpiralforwardiralbackwards 3s forwards */
+  /* var(--cm-transition-medium); */
 }
 
 @keyframes drawSpiralbackwards {
   from {
-    stroke-dashoffset: 0; /* Start hidden in reverse */
+    stroke-dashoffset: 15000; /* Start hidden in reverse */
   }
   to {
-    stroke-dashoffset: -12500; /* End fully visible */
-    fill-opacity: 1;
+    stroke-dashoffset: 0; /* End fully visible */
   }
 }
 
@@ -43,7 +40,6 @@
   }
   to {
     stroke-dashoffset: 15000; /* End fully visible */
-    fill-opacity: 1;
   }
 }
 
